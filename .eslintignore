@@ -1,3 +1,6 @@
-dist
-public
-lib
+dist/
+public/
+lib/
+node_modules/
+!.eslintrc.js
+!.babelrc.js

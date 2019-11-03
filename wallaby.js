@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = wallaby => {
   return {
     files: [
       'package.json',
@@ -6,13 +6,19 @@ module.exports = () => {
       '!**/*.test.js',
       '!**/*.spec.js',
       '!node_modules/**/*',
+      '!./*.js',
     ],
     tests: ['**/*.test.js', '**/*.spec.js', '!node_modules/**/*'],
+
+    // runMode: 'onsave',
 
     env: {
       type: 'node',
       runner: 'node',
     },
     testFramework: 'jest',
+    compilers: {
+      '**/*.js': wallaby.compilers.babel(),
+    },
   };
 };
